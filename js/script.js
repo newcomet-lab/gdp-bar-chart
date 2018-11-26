@@ -22,14 +22,20 @@ function displayChart() {
       .attr('height', h);
 
     svg.append('g')
-    .attr('class', 'x-axis')
-    .attr('transform', `translate(0, ${h - padding.top})`)
-    .call(d3.axisBottom(xScale));
+      .attr('class', 'x-axis')
+      .attr('transform', `translate(0, ${h - padding.top})`)
+      .call(d3.axisBottom(xScale));
 
     svg.append('g')
-    .attr('class', 'y-axis')
-    .attr('transform', `translate(${padding.left}, 0)`)
-    .call(d3.axisLeft(yScale));
+      .attr('class', 'y-axis')
+      .attr('transform', `translate(${padding.left}, 0)`)
+      .call(d3.axisLeft(yScale));
+
+    svg.append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('x', -400)
+      .attr('y', 30)
+      .text('Gross Domestic Product in Billions');
   }).catch(() => {
   });
 }
