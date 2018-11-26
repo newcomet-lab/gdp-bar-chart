@@ -51,13 +51,7 @@ function displayChart() {
       .on('mouseout', handleMouseout);
 
     function handleMouseover(d) {
-      const quarter = {
-        '01': 1,
-        '04': 2,
-        '07': 3,
-        '10': 4
-      };
-      const date = moment(d[0]);
+      const quarter = ['01', '04', '07', '10'];
       const tooltip = d3.select('.chart')
         .append('div')
         .attr('class', 'tooltip')
@@ -69,7 +63,7 @@ function displayChart() {
       tooltip.transition()
         .duration(200)
         .style('opacity', 0.9);
-      tooltip.html(`${date.format('YYYY')} Q${quarter[date.format('MM')]}<br/>$${d[1]}B`)
+      tooltip.html(`${d[0].split('-')[0]} Q${quarter.indexOf(d[0].split('-')[1]) + 1}<br/>$${d[1]}B`)
         .style('left', `${d3.event.pageX + 8}px`)
         .style('top', `${d3.event.pageY - 28}px`);
     }
