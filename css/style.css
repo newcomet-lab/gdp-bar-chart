@@ -1,3 +1,7 @@
+html {
+  background: #ccc;
+}
+
 .error-message {
   background: hsl(349, 96%, 95%);
   border: 1px solid hsl(349, 96%, 90%);
