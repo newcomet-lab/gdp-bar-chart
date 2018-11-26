@@ -70,7 +70,7 @@ function displayChart() {
         .duration(200)
         .style('opacity', 0.9);
       tooltip.html(`${date.format('YYYY')} Q${quarter[date.format('MM')]}<br/>$${d[1]}B`)
-        .style('left', `${d3.event.pageX}px`)
+        .style('left', `${d3.event.pageX + 8}px`)
         .style('top', `${d3.event.pageY - 28}px`);
     }
 
