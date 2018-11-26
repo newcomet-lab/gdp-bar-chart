@@ -36,6 +36,18 @@ function displayChart() {
       .attr('x', -400)
       .attr('y', 30)
       .text('Gross Domestic Product in Billions');
+
+    svg.selectAll('rect')
+      .data(data)
+      .enter()
+      .append('rect')
+      .attr('class', 'bar')
+      .attr('x', (d) => xScale(new Date(d[0])))
+      .attr('y', (d) => yScale(d[1]))
+      .attr('width', w/275)
+      .attr('height', (d) => h - yScale(d[1]) - padding.top)
+      .attr('fill', '#522d86');
+
   }).catch(() => {
   });
 }
