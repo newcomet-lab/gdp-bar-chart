@@ -81,6 +81,7 @@ function displayChart() {
       d3.select('.tooltip').remove();
     }
   }).catch(() => {
+    document.querySelector('.error-message').style.display = 'block';
   });
 }
 
