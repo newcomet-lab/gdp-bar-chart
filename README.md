@@ -4,6 +4,13 @@ My project for the [Visualize Data with a Bar Chart challenge](https://learn.fre
 
 ---
 
+## Built With
+* [D3](https://d3js.org)
+* CSS3
+* [axios](https://github.com/axios/axios)
+* [Moment.js](https://momentjs.com)
+* [Font Awesome](https://fontawesome.com)
+
 ## Demo
 
 View project demo at [https://autumnchris.github.io/gdp-bar-chart](https://autumnchris.github.io/gdp-bar-chart).
