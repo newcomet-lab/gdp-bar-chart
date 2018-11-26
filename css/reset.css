@@ -10,7 +10,9 @@ h4,
 h5,
 h6,
 div,
+span,
 svg,
+p,
 a {
   background: transparent;
   border: 0;
@@ -48,4 +50,9 @@ a:focus {
 
 a:hover {
   text-decoration: underline;
+}
+
+span {
+  color: inherit;
+  letter-spacing: inherit;
 }
