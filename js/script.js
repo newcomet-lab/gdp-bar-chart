@@ -2,7 +2,7 @@ function displayChart() {
 
   axios.get('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json').then((dataset) => {
     const data = dataset.data.data;
-    const padding = {
+    const margin = {
       top: 50,
       right: 40,
       bottom: 40,
@@ -23,13 +23,14 @@ function displayChart() {
 
     svg.append('g')
       .attr('class', 'y-axis')
-      .attr('transform', `translate(${padding.left}, 0)`);
+      .attr('transform', `translate(${margin.left}, 0)`);
 
     svg.append('text')
       .attr('class', 'y-label')
       .attr('transform', 'rotate(-90)')
       .attr('x', -290)
       .attr('y', 40)
+      .attr('fill', '#fff')
       .text('Gross Domestic Product in Billions');
 
     svg.selectAll('rect')
@@ -37,7 +38,7 @@ function displayChart() {
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('fill', '#522d86')
+      .attr('fill', '#4ddbff')
       .on('mouseover', handleMouseover)
       .on('mouseout', handleMouseout);
 
@@ -54,20 +55,20 @@ function displayChart() {
         .style('visibility', 'hidden');
 
       d3.select(this)
-        .attr('fill', '#46d246');
+        .attr('fill', '#333');
 
       tooltip.transition()
         .duration(200)
         .style('visibility', 'visible');
 
       tooltip.html(`${d[0].split('-')[0]} Q${quarter.indexOf(d[0].split('-')[1]) + 1}<br/>$${d[1]}B`)
-        .style('left', `${d3.select(this).attr('x') - 100}px`)
-        .style('top', `${d3.event.pageY - 150}px`);
+        .style('left', `${d3.event.pageX - 50}px`)
+        .style('top', `${d3.event.pageY - 80}px`);
     }
 
     function handleMouseout() {
       d3.select(this)
-        .attr('fill', '#522d86');
+        .attr('fill', '#4ddbff');
 
       d3.select('.tooltip').remove();
     }
@@ -89,14 +90,13 @@ function displayChart() {
         }
       }
 
-      xScale.range([padding.left, w - padding.right]);
-      yScale.range([h - padding.top, padding.bottom]);
+      xScale.range([margin.left, w - margin.right]);
+      yScale.range([h - margin.top, margin.bottom]);
 
-      svg.attr('width', w)
-        .attr('height', h);
+      svg.attr('viewBox', `0 0 ${w} ${h}`);
 
       svg.select('.x-axis')
-        .attr('transform', `translate(0, ${h - padding.top})`)
+        .attr('transform', `translate(0, ${h - margin.top})`)
         .call(d3.axisBottom(xScale));
 
       svg.select('.y-axis')
@@ -106,7 +106,7 @@ function displayChart() {
         .attr('x', (d) => xScale(new Date(d[0])))
         .attr('y', (d) => yScale(d[1]))
         .attr('width', w / data.length)
-        .attr('height', (d) => h - yScale(d[1]) - padding.top);
+        .attr('height', (d) => h - yScale(d[1]) - margin.top);
     }
 
     resize();
