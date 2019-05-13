@@ -32,6 +32,7 @@ svg {
   border-radius: 3px;
   box-shadow: 1px 1px 13px 0px #828282;
   color: #333;
+  font-size: 0.8rem;
   line-height: 20px;
   padding: 8px;
   pointer-events: none;
@@ -80,5 +81,13 @@ footer a:focus {
 
   h2 {
     font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+
+  .tooltip {
+    font-size: 1.1rem;
+    line-height: 24px;
   }
 }
