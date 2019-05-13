@@ -1,20 +1,18 @@
 function displayChart() {
+  const margin = {
+    top: 50,
+    right: 40,
+    bottom: 40,
+    left: 110
+  };
+  let w;
+  let h;
 
-  axios.get('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json').then((dataset) => {
-    const data = dataset.data.data;
-    const margin = {
-      top: 50,
-      right: 40,
-      bottom: 40,
-      left: 110
-    };
-    let w;
-    let h;
-
+  d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json').then(dataset => {
     const xScale = d3.scaleTime()
-      .domain(d3.extent(data, (d) => new Date(d[0])));
+      .domain(d3.extent(dataset.data, (d) => new Date(d[0])));
     const yScale = d3.scaleLinear()
-      .domain([0, d3.max(data, (d) => d[1])]);
+      .domain([0, d3.max(dataset.data, (d) => d[1])]);
     const svg = d3.select('.chart')
       .append('svg');
 
@@ -34,7 +32,7 @@ function displayChart() {
       .text('Gross Domestic Product in Billions');
 
     svg.selectAll('rect')
-      .data(data)
+      .data(dataset.data)
       .enter()
       .append('rect')
       .attr('class', 'bar')
@@ -105,7 +103,7 @@ function displayChart() {
       svg.selectAll('.bar')
         .attr('x', (d) => xScale(new Date(d[0])))
         .attr('y', (d) => yScale(d[1]))
-        .attr('width', w / data.length)
+        .attr('width', w / dataset.data.length)
         .attr('height', (d) => h - yScale(d[1]) - margin.top);
     }
 
@@ -113,7 +111,7 @@ function displayChart() {
 
     d3.select(window)
       .on('resize', resize);
-  }).catch(() => {
+  }).catch((err) => {
     document.querySelector('.error-message').style.display = 'block';
   });
 }

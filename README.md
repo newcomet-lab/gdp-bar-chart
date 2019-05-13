@@ -7,7 +7,6 @@ My project for the [Visualize Data with a Bar Chart challenge](https://learn.fre
 ## Built With
 * [D3.js](https://d3js.org)
 * CSS3
-* [axios](https://github.com/axios/axios)
 * [Font Awesome](https://fontawesome.com)
 
 ## Demo
