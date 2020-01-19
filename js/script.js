@@ -35,7 +35,7 @@ function displayChart() {
       .attr('transform', 'rotate(-90)')
       .attr('x', -260)
       .attr('y', 40)
-      .attr('fill', '#fff')
+      .attr('fill', 'hsl(0, 0%, 100%)')
       .text('Gross Domestic Product in Billions');
 
     svg.selectAll('rect')
@@ -64,7 +64,7 @@ function displayChart() {
         .style('visibility', 'hidden');
 
       d3.select(this)
-        .attr('fill', '#333');
+        .attr('fill', 'hsl(0, 0%, 20%)');
 
       tooltip.transition()
         .duration(200)
