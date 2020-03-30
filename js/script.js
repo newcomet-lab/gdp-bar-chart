@@ -87,3 +87,5 @@ function displayChart() {
 }
 
 displayChart();
+
+document.querySelector('.current-year').innerHTML = new Date().getFullYear();
