@@ -1,6 +1,8 @@
 # GDP Bar Chart
 
-My project for the [Visualize Data with a Bar Chart challenge](https://learn.freecodecamp.org/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart) as part of the curriculum for the Data Visualization Certification on [freeCodeCamp](https://www.freecodecamp.org).
+A D3.js bar chart that presents the changes in the US Gross Domestic Product from 1947 to 2015.
+
+Inspired by the [Visualize Data with a Bar Chart challenge](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart) as part of the curriculum for the [Data Visualization Certification](https://www.freecodecamp.org/learn/data-visualization) on [freeCodeCamp](https://www.freecodecamp.org).
 
 ---
 
