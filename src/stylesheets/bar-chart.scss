@@ -1,0 +1,25 @@
+// STYLES FOR BAR CHART
+
+.bar-chart {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  .y-label {
+    fill: change-color($black, $lightness: 100%);
+    font-size: 0.7rem;
+  }
+}
+
+.tooltip {
+  background: change-color($black, $lightness: 100%);
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 13px 0px change-color($black, $lightness: 51%);
+  box-shadow: 1px 1px 13px 0px change-color($black, $lightness: 51%);
+  color: change-color($black, $lightness: 20%);
+  font-size: 0.8rem;
+  padding: 8px;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  z-index: 1;
+}
