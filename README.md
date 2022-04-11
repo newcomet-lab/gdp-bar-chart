@@ -15,6 +15,7 @@ Inspired by the [Visualize Data with a Bar Chart challenge](https://www.freecode
 * [Babel](https://babeljs.io)
 * [Normalize.css](https://necolas.github.io/normalize.css)
 * [Font Awesome](https://fontawesome.com)
+* [Google Fonts](https://fonts.google.com)
 
 ## Demo
 

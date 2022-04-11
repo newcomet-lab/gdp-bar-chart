@@ -86,8 +86,8 @@ const BarChart = () => {
   return (
     <div className="chart-container">
       {loadingStatus ? <LoadingSpinner /> : loadSuccess ? <svg className="bar-chart" viewBox={`0 0 ${w} ${h}`}>
-        <g className="x-axis" transform={`translate(0, ${h - margin.top})`}></g>
-        <g className="y-axis" transform={`translate(${margin.left}, 0)`}></g>
+        <g className="x-axis" transform={`translate(0, ${h - margin.top})`} style={{ fontFamily: "'Noto Sans', sans-serif" }}></g>
+        <g className="y-axis" transform={`translate(${margin.left}, 0)`} style={{fontFamily: "'Noto Sans', sans-serif"}}></g>
         <text className="y-label" x="-260" y="40" transform="rotate(-90)">Gross Domestic Product in Billions</text>
       </svg> : <ErrorMessage />}
     </div>
