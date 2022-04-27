@@ -34,7 +34,7 @@ const BarChart = () => {
       d3.select('.y-axis')
         .call(d3.axisLeft(yScale));
       
-      d3.select('.bar-chart').selectAll('rect')
+      d3.select('.bar-chart').selectAll('.bar')
         .data(dataset.data)
         .enter()
         .append('rect')
