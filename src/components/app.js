@@ -1,4 +1,5 @@
 import React from 'react';
+
 import BarChart from './bar-chart';
 
 const App = () => {
@@ -11,7 +12,7 @@ const App = () => {
       <main>
         <BarChart />
       </main>
-      <footer>Created by <a href="https://autumnchris.github.io/portfolio" target="_blank">Autumn Bullard</a> &copy; {new Date().getFullYear()}</footer>
+      <footer>Created by D3.js &copy; {new Date().getFullYear()}</footer>
     </React.Fragment>
   );
 }

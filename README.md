@@ -17,10 +17,6 @@ Inspired by the [Visualize Data with a Bar Chart challenge](https://www.freecode
 * [Font Awesome](https://fontawesome.com)
 * [Google Fonts](https://fonts.google.com)
 
-## Demo
-
-View project demo at [https://autumnchris.github.io/gdp-bar-chart](https://autumnchris.github.io/gdp-bar-chart).
-
 ## Instructions
 
 After forking and cloning, navigate to the repository in your command line and install the NPM packages:
